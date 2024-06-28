@@ -110,7 +110,7 @@ public class Product {
                 ", description='" + description + '\'' +
                 ", productPrice=" + productPrice +
                 ", stock=" + stock +
-                ", catalog=" + catalog +
+                ", catalog=" + catalog.getCatalogName() +
                 ", status=" + (status ?"Sell":"notSell") +
                 '}';
     }
