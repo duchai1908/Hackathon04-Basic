@@ -3,11 +3,21 @@ package Basic.HN_JV240408_BS_NguyenDucHai.ra.validate;
 import java.util.Scanner;
 
 public class CatalogValidate {
+
+    //Validate CatalogId
     public static int inputCatalogId(Scanner sc){
-        System.out.println("Enter Catalog Id");
-        return Integer.parseInt(sc.nextLine());
+        while (true){
+            try {
+                System.out.println("Enter Catalog Id");
+                return Integer.parseInt(sc.nextLine());
+            }catch (NumberFormatException e){
+                System.err.println("You must enter a number, please try again");
+            }
+        }
+
     }
 
+    //Validate CatalogName
     public static String inputCatalogName(Scanner sc) {
         while (true){
             System.out.println("Enter Catalog Name");
@@ -21,6 +31,7 @@ public class CatalogValidate {
         }
     }
 
+    //Validate CatalogDescriptions
     public static String inputCatalogDescriptions(Scanner sc) {
         while (true){
             System.out.println("Enter Catalog Descriptions");

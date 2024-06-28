@@ -80,6 +80,7 @@ public class Product {
         this.status = status;
     }
 
+    //Input Data Product
     public void inputData(Scanner sc){
         this.productId = ProductValidate.inputProductId(sc);
         this.productName = ProductValidate.inputProductName(sc);
@@ -90,6 +91,17 @@ public class Product {
         this.status = true;
     }
 
+    //Update Data Product
+    public void saveData(Scanner sc){
+        this.productName = ProductValidate.inputProductName(sc);
+        this.productPrice = ProductValidate.inputProductPrice(sc);
+        this.description = ProductValidate.inputProductDescriptions(sc);
+        this.catalog = ProductValidate.inputProductCatalog(sc);
+        this.stock = ProductValidate.inputProductStock(sc);
+        this.status = ProductValidate.inputProductStatus(sc);
+    }
+
+    //Display Prduct
     @Override
     public String toString() {
         return "Product{" +

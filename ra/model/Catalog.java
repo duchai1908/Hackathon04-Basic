@@ -41,11 +41,20 @@ public class Catalog {
         this.descriptions = descriptions;
     }
 
+    //Input Data Catalog
     public void inputData(Scanner sc){
         this.catalogId = CatalogValidate.inputCatalogId(sc);
         this.catalogName = CatalogValidate.inputCatalogName(sc);
         this.descriptions = CatalogValidate.inputCatalogDescriptions(sc);
     }
+
+    //Update Data Catalog
+    public void saveData(Scanner sc){
+        this.catalogName = CatalogValidate.inputCatalogName(sc);
+        this.descriptions = CatalogValidate.inputCatalogDescriptions(sc);
+    }
+
+    //Display Catalog
     @Override
     public String toString() {
         return "CatalogID: " +this.catalogId + "   |   CatalogName: "+this.catalogName +"\n"

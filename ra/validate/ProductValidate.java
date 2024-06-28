@@ -12,6 +12,8 @@ import java.util.regex.Pattern;
 public class ProductValidate {
     private static IGenericService<Product,String> products = new ProductService();
     private static IGenericService<Catalog,Integer> categories = new CatalogService();
+
+    //Validate Product Id
     public static String inputProductId(Scanner sc){
         String productIdRegex = "^P\\d{4}$";
         while (true){
@@ -35,6 +37,7 @@ public class ProductValidate {
         }
     }
 
+    //Validate Product Name
     public static String inputProductName(Scanner sc) {
         while (true){
             System.out.println("Enter Product Name");
@@ -47,6 +50,7 @@ public class ProductValidate {
         }
     }
 
+    //Validate Product Price
     public static double inputProductPrice(Scanner sc) {
         double productPrice;
         while (true){
@@ -67,11 +71,13 @@ public class ProductValidate {
         }
     }
 
+    //Validate Product Descriptions
     public static String inputProductDescriptions(Scanner sc) {
         System.out.println("Enter product description");
         return sc.nextLine();
     }
 
+    //Validate Catalog
     public static Catalog inputProductCatalog(Scanner sc) {
         System.out.println("List Category");
         for (Catalog catalog: categories.getAll()){
@@ -96,6 +102,7 @@ public class ProductValidate {
         }
     }
 
+    //Validate Product Stock
     public static int inputProductStock(Scanner sc) {
         int categoryStock;
         while (true){
@@ -112,6 +119,19 @@ public class ProductValidate {
                 System.err.println("Category stock must greater than 10");
             }else{
                 return categoryStock;
+            }
+        }
+    }
+
+    //Validate Product Status
+    public static boolean inputProductStatus(Scanner sc) {
+        while (true){
+            System.out.println("Enter Product status ( true | false )");
+            String productStatus = sc.nextLine().toLowerCase();
+            if(productStatus.equals("false") || productStatus.equals("true")){
+                return Boolean.parseBoolean(productStatus);
+            }else{
+                System.err.println("status must be true or false");
             }
         }
     }
